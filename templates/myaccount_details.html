@@ -1,0 +1,63 @@
+
+{% include 'header.html' %}
+
+{% load static %}
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+
+
+
+<style >
+
+h2 {text-align: center;
+font-size: 30px;
+font-family: "Trirong", serif;
+font-weight: bold;
+}
+h3 {
+font-size: 25px;
+font-family: "Trirong", serif;
+font-weight: bold;
+}
+h4 {
+font-size: 20px;
+}
+h5 {
+font-size: 20px;
+font-family: "Open Sans Condensed", Open Sans Condensed;
+font-weight: bold;
+}
+
+</style>
+
+
+
+<div class="container">
+<div class="row">
+<!--<div class="col-sm-4"><h2>My Account:</h2></div>-->
+<div class="col-sm-8"><h3>Account Details</h3><hr>
+<div class="row">
+<div class="col-sm-4"><h4>Name:</h4></div>
+<div class="col-sm-8"><h5>{{account_details.username}}</h5></div>
+</div>
+<div class="row">
+<div class="col-sm-4"><h4>Email:</h4></div>
+<div class="col-sm-8"><h5>{{account_details.email}}</h5></div>
+</div>
+<div class="row">
+<div class="col-sm-4"><h4>Full Name:</h4></div>
+<div class="col-sm-8"><h5>{{account_details.first_name}} {{account_details.last_name}}</h5></div>
+</div>
+<a href="{% url 'profile' %}" class="btn btn-outline-info">Edit</a>
+    <a href="{% url 'change_password' %}" class="btn btn-outline-info">Change password</a>
+
+
+</div>
+</div>
+</div>
+
+
+
+{% include 'footer.html' %}

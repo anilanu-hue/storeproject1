@@ -1,0 +1,13 @@
+{% include 'header.html' %}
+
+{% load static %}
+
+<form method='POST' enctype="multipart/form-data">
+    {%csrf_token%}
+    {{u_form.as_ul}}
+
+    <button type='submit' class="btn btn-outline-info alert-danger">Update</button>
+</form>
+
+
+{% include 'footer.html' %}

@@ -1,0 +1,71 @@
+
+{% include 'header.html' %}
+
+<table class="table" >
+  <thead>
+    <tr>
+
+       <th scope="col">order id</th>
+        <th scope="col">product image</th>
+      <th scope="col">Product</th>
+      <th scope="col">price</th>
+      <th scope="col">quantity</th>
+        <th scope="col">Total</th>
+    </tr>
+  </thead>
+             {% for u in cart_products %}
+  <tbody>
+    <tr>
+
+    <th scope="row">{{u.order_id_id}}</th>
+    <th scope="row"><img src="/media/{{u.product.image1}}" width="100" height="100"></th>
+     <th scope="row">{{u.product}}</th>
+      <th scope="row">{{u.price}}</th>
+     <th scope="row">
+         <input type="number" name="quantity" min="0" max="50" value="{{u.quantity}}" onclick="update_cart({{u.order_id_id}},{{u.product_id}},this.value)" id="quantity{{forloop.counter}}">
+     <input type="hidden" value="{{u.price}}" id="price{{forloop.counter}}">
+
+     </th>
+
+      <th scope="row" id="total{{forloop.counter}}"></th>
+
+      <td><button class="btn btn-outline-info"><a href="{% url 'cart_del' u.id %}">delete</a></button> </td>
+
+    </tr>
+
+                    {% endfor %}
+
+
+
+  </tbody>
+</table>
+<script>
+
+window.onload=calculate_price({{count}});
+function calculate_price(c)
+{
+
+    for(i=1;i<=c;i++)
+    {
+        p="price"+i
+        q="quantity"+i
+        t="total"+i
+
+        price=document.getElementById(p).value
+
+        quan=document.getElementById(q).value
+
+
+        total =  price*quan
+        document.getElementById(t).innerHTML=total
+
+
+
+    }
+}
+
+</script>
+
+
+
+{% include 'footer.html' %}

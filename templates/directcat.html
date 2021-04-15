@@ -1,0 +1,148 @@
+{% include 'header.html' %}
+
+
+
+{% load static %}
+
+
+    <!-- Start About Page  -->
+    <div class="about-box-main">
+
+        <div class="container">
+            <div class="row">
+            <div class="col-lg-6">
+                    <div class="banner-frame"> <img class="img-fluid" src="/media/{{y.image1}}" alt="" />
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="noo-sh-title-top"><span>{{y.MC}}-{{y.SC}}</span></h2>
+
+                    <h1>Quantity :{{y.quantity}}</h1>
+                    <h1>Units Remaining :{{y.unit_quantity}}</h1>
+                    <h1>Expiry Date :{{y.expiry_date}}</h1>
+                    <h1>MRP :{{y.mrp}}/-</h1>
+
+               <a class="btn hvr-hover" onclick="add_to_cart({{y.id}},document.getElementById('quantity').value)">Add to Cart</a>
+                    <input id="quantity" type=number min=1 max=110>
+
+
+
+            </div>
+       <div class="row my-5">
+                <div class="col-sm-6 col-lg-4">
+                    <div class="service-block-inner">
+                        <h3>Category</h3>
+                        <h1>{{y.DC}}</h1>
+                         <img class="img-fluid" src="/media/{{y.image2}}" alt="" />
+
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="service-block-inner">
+                        <h3>Brand</h3>
+                        <h1>{{y.Brand}}</h1>
+                         <img class="img-fluid" src="/media/{{y.image3}}" alt="" />
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="service-block-inner">
+                        <h3>Name of the brand</h3>
+                        <h1>{{y.pname}}</h1>
+                         <img class="img-fluid" src="/media/{{y.image4}}" alt="" />
+
+                    </div>
+                </div>
+            </div>
+
+    </div>
+    <!-- End About Page -->
+
+    <!-- Start Instagram Feed  -->
+ <!--   <div class="instagram-box">
+        <div class="main-instagram owl-carousel owl-theme">
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'images/instagram-img-01.jpg' %}" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'images/instagram-img-02.jpg' %}" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'images/instagram-img-03.jpg' %}" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'images/instagram-img-04.jpg' %}" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'images/instagram-img-05.jpg' %}" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'images/instagram-img-06.jpg' %}" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'images/instagram-img-07.jpg' %}" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'images/instagram-img-08.jpg' %}" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'images/instagram-img-09.jpg' %}" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="{% static 'images/instagram-img-05.jpg' %}" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>-->
+    <!-- End Instagram Feed  -->
+
+{% include 'footer.html' %}

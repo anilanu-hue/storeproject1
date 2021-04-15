@@ -1,0 +1,20 @@
+
+{% include 'header.html' %}
+
+{% load static %}
+{% block content%}
+
+
+<form method="post">
+{{form.as_p}}
+<button type="submit" class="btn btn-outline-info" name="submit" value="Login" >Login</button>
+{% csrf_token %}
+</form>
+<div>
+<h1>if not registered please click here:<button class="btn btn-outline-info"><a href="{% url 'signup' %}">Sign-up</a></button></h1>
+
+</div>
+
+{% endblock %}
+
+{% include 'footer.html' %}

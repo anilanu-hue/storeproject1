@@ -1,0 +1,161 @@
+{% include 'header.html' %}
+{% load static %}
+
+
+            <!-- Start Side Menu -->
+
+            <!-- End Side Menu -->
+
+    <!-- End Main Top -->
+
+    <!-- Start Top Search -->
+
+    <!-- End Top Search -->
+
+    <!-- Start Slider -->
+    <div id="slides-shop" class="cover-slides">
+        <ul class="slides-container">
+            <li class="text-center">
+                <img src="static/images/banner1.jpeg" alt="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="m-b-20"><strong>Welcome To <br> FreshMart</strong></h1>
+                            <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
+                            <p><a class="btn hvr-hover" href="#">Shop New</a></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="text-center">
+                <img src="static/images/banner2.jpeg" alt="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="m-b-20"><strong>Welcome To <br> Freshshop</strong></h1>
+                            <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
+                            <p><a class="btn hvr-hover" href="#">Shop New</a></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="text-center">
+                <img src="static/images/banner-03.jpg" alt="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="m-b-20"><strong>Welcome To <br> Freshshop</strong></h1>
+                            <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
+                            <p><a class="btn hvr-hover" href="#">Shop New</a></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="slides-navigation">
+            <a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            <a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+        </div>
+    </div>
+    <!-- End Slider -->
+
+    <!-- Start Categories  -->
+
+    <!-- End Categories -->
+	
+	<div class="box-add-products">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-12">
+					<div class="offer-box-products">
+						<img class="img-fluid" src="static/images/add-img-01.jpg" alt="" />
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12">
+					<div class="offer-box-products">
+						<img class="img-fluid" src="static/images/add-img-02.jpg" alt="" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <!-- Start Products  -->
+    <div class="products-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-all text-center">
+                        <h1>Fruits & Vegetables</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="special-menu text-center">
+                        <div class="button-group filter-button-group">
+                            <button class="active" data-filter="*">All</button>
+                            <button data-filter=".top-featured">Top featured</button>
+                            <button data-filter=".best-seller">Best seller</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row special-list">
+                {% for p in products  %}
+                <div class="col-lg-3 col-md-6 special-grid best-seller">
+                    <div class="">
+                        <div class="box-img-hover">
+                            <div class="type-lb">
+                                <p class="sale">Sale</p>
+                            </div>
+                           <a href="{% url 'directcat_view' p.id %}"><img src= "/media/{{p.image1}}" class="img-fluid" alt="" width="200px" height="200px" /></a>
+
+
+                        </div>
+                        <div class="why-text">
+                            <h4> {{p.pname}}</h4>
+                            <h4> {{p.selling_price}}/-</h4>
+                            <h5><a class="btn hvr-hover" {% if request.session.items %} onclick="add_to_cart({{p.id}},1)" {% else %} href="/accounts/login" {% endif %}>Add to Cart</a></h5>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- End Products  -->
+
+    <!-- Start Blog  -->
+
+    <!-- End Blog  -->
+
+  <h3>Swipe left or right</h3>
+    <!-- Start Instagram Feed  -->
+
+<div class="instagram-box">
+        <div class="main-instagram owl-carousel owl-theme">
+             {% for k in catgery  %}
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="media/{{k.image}}" alt="" width="200px" height="200px" />
+                    <div class="hov-in">
+                        <a href="{% url 'catsearch_view' k.id  %}"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                         <h4 style="background-color:Tomato">{{k.MCName}}</h4>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- End Instagram Feed  -->
+
+{% include 'footer.html'%}

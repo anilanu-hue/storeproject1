@@ -1,0 +1,23 @@
+{% include 'header.html' %}
+
+{% load static %}
+{% block content%}
+
+
+{% if request.session.items %}
+
+< href="/accounts/logout">Logout</a>
+
+
+{% else %}
+
+<a href="/" >Register</a>
+
+
+<a href="/accounts/login/" class="navbar-brand">login</a>
+
+{% endif %}
+
+{% endblock %}
+
+{% include 'footer.html' %}

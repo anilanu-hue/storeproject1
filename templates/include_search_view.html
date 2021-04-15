@@ -1,0 +1,16 @@
+
+<div class="dropdown">
+	<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Categories
+  </button>
+	 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+		 {% for w in catgery %}
+
+		 <a class="dropdown-item" href="{% url 'catsearch_view' w.id %}">{{w.MCName}}</a>
+		 {% endfor %}
+
+</div>
+</div>
+
+

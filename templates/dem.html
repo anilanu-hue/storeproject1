@@ -1,0 +1,16 @@
+var $apples = document.getElementById('apples')
+var $applesTotal = document.getElementById('apples-total')
+
+var $grandTotal = document.getElementById('grand-total')
+
+function apple (v) { return 50 * v }
+
+
+$apples.addEventListener('change', function() {
+  $applesTotal.textContent = apple($apples.value)
+  $grandTotal.textContent = apple($apples.value) + banana($bananas.value)
+})
+
+<input type="number" id="apples">
+<p>Apples total: <span id="apples-total">0</span></p>
+<p>Grand total: <span id="grand-total">0</span></p>

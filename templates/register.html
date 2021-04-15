@@ -1,0 +1,106 @@
+{% include 'header.html' %}
+{% load static %}
+
+<!--<body style="background-color:burlywood;">
+
+
+
+<div class="container-fluid header text-center">
+    <h3>User registration</h3>
+</div>
+
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-0 btn-bar" onclick="navigation(event)">
+
+      <a href="/login_view/" class="" id="login"><h3>Login</h3></a>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 box" style="display:block;">-->
+      <!-- <span style="font-size:26px;">Registration</span> -->
+      <!--<h3>Registration</h3><br>
+      <span style="font-size:18px;">{{ status }}</span>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <div class="inputbox">
+            <form action="" method="post">
+              {% csrf_token %}
+              Username<br>
+              <input type="text" name="name" autocomplete="off" required><br>
+
+             E-Mail<br>
+              <input type="text" name="email" autocomplete="off" required><br>
+
+
+              Password<br>
+              <input type="password" name="password" minlength="8" autocomplete="off" required><br>
+
+              <input type="submit" value="Submit" name="submit" style="margin:0 25% 0 25%;">
+            </form>
+          </div>
+        </div>
+    </div>
+        <a href="/login_view/" onclick="navigation(event)" id="loginLink"><h3>Already registered? Login</h3></a>
+
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 loginBox" style="display:none;">
+      Login
+
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <div class="inputBox" style="font-size:18px;">
+            <form action="" method="post">
+              {% csrf_token %}
+              Username<br>
+              <input type="text" name="name" autocomplete="off" required><br>
+
+              Password<br>
+              <input type="password" name="password" minlength="8" autocomplete="off" required>
+
+              <input type="submit" value="Login" name="login" style="margin:0 25% 0 25%;">
+            </form>
+          </div>
+        </div>
+      </div>
+      <a href="#" onclick="navigation(event)" id="regLink">Not a registered user? Register</a>
+
+    </div>
+  </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>-->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script> -->
+
+
+{% block content%}
+
+
+<form method="post" action="" name="singnupform" onsubmit="alert('hi')">
+{{form1.as_p }}&nbsp;&nbsp;
+<input type="submit" value="Submit" class="btn btn-outline-info" >
+   <!-- <button type="button" class="btn btn-dark">Dark</button>-->
+
+<!--<button type="submit" class="btn-primary" name="submit" value="Register">Register</button>-->
+{% csrf_token %}
+</form>
+
+
+
+{% endblock %}
+
+
+{% include 'footer.html' %}
+
